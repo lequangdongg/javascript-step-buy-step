@@ -1,0 +1,130 @@
+@mixin footerPD {
+	border-bottom: 1px solid #494949;
+	padding-bottom: 40px;
+	padding-left: 40px;
+}
+
+@mixin paddingLeft {
+	padding-left: 100px;
+}
+
+footer {
+	background-color: #050505;
+	color: #d1d1d1;
+	width: 100%;
+	.footer {
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		border-bottom: 1px solid #494949;
+		padding-bottom: 50px;
+		.footer__contact {
+			padding-left: 100px;
+			.footer__list {
+				span {
+					&:hover {
+						color: #789629;
+					}
+				}
+			}
+		}
+		.fas {
+			color: #789629;
+		}
+		.fa-envelope {
+			padding-left: 10px;
+		}
+		@media screen and (max-width: 900px){
+			grid-template-columns: none;
+			.footer__contact{
+				@include footerPD
+			}
+			.footer__shipping{
+				@include footerPD
+			}
+			// .footer__total{
+			// 	border-bottom: 1px solid #494949;
+			// }
+			.footer__support{
+				@include footerPD
+			}
+			.footer__information{
+				@include footerPD
+			}
+			.footer__account{
+				@include footerPD;
+				border-bottom: none;
+			}
+		}
+
+	}
+	.footer__total {
+		font-size: 18px;
+		line-height: 30px;
+		color: #d1d1d1;
+		font-family: "Open Sans";
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-bottom: 18px;
+		padding-top: 50px;
+	}
+	.footer__contact-location {
+		font-size: 14px;
+		line-height: 30px;
+		color: #494949;
+		font-family: "Roboto";
+		font-weight: 400;
+	}
+	.footer__list {
+		line-height: 38px;
+		color: #494949;
+		li {
+			list-style: none;
+		}
+		ul {
+			li {
+				&:hover {
+					color: #789629;
+					list-style: square;
+					margin-left: 5px;
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+	.footer__copy {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 28px;
+		p {
+			padding-left: 100px;
+			@media screen and (max-width: 768px){
+				padding-left: 40px;
+			}
+		}
+		div {
+			img {
+				padding-right: 50px;
+				@media screen and (max-width: 480px){
+					padding-right: initial;
+					padding-left: 40px;
+					margin-top: 10px;
+				}
+			}
+		}
+		@media screen and (max-width: 480px){
+			flex-direction: column;
+		}
+	}
+}
+.footer__shipping {
+	@include paddingLeft();
+}
+.footer__support {
+	@include paddingLeft();
+}
+.footer__information {
+	@include paddingLeft();
+}
+.footer__account {
+	@include paddingLeft();
+}

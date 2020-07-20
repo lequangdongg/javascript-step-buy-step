@@ -1,0 +1,188 @@
+include ../common/mixin.pug
+main
+  section.icon__buy
+    .icon__buy-plane
+      i.fas.fa-plane
+      p Miễn phí vận chuyển
+    span
+    .icon__buy-girf
+      i.fa.fa-gift
+      p
+        | Nhận quà tặng trị giá 350.000đ
+        // ơ
+    span
+    .icon__buy-star
+      i.fas.fa-star
+      p Giảm 30% cho hóa đơn trên 5.000.000đ
+  secton.image__grid
+    .image__grid-1
+      img(src='../../asset/suatam.jpg', alt='')
+    .image__grid-2
+      p.image__grid-text SỮA TẮM
+      +imgSlack
+    .image__grid-3
+      img(src='../../asset/nuochoa1.jpg', alt='')
+    .image__grid-4
+      p.image__grid-text NƯỚC HOA
+      +imgSlack
+    .image__grid-5
+      img(src='../../asset/vuongniem2.jpg', alt='')
+    .image__grid-6
+      img(src='../../asset/combo-tamtrang.jpg', alt='')
+    .image__grid-7
+      img(src='../../asset/kimcuong.jpg', alt='')
+    .image__grid-8
+      p TRANG SỨC
+      +imgSlack
+    .image__grid-9
+      img(src='../../asset/girl.jpg', alt='')
+    .image__grid-10
+      img(src='../../asset/daisy.jpg', alt='')
+  section.image__banner
+  section.product
+    .product__title
+      span Sản phẩm mới 
+      span Sản phẩm bán chạy 
+      span Sản phẩm đặc biệt
+    .product__space
+      span
+      span 
+        each n in Array(17)
+          | /
+      span
+    .product__tabs 
+      -let tabs = ["Mỹ phẩm", "Chăm sóc da", "Dành cho tóc", "Nước hoa", "Trang sức", "Quà tặng"]
+      each tab in tabs 
+        ul
+          li=tab
+    .product__arrow
+      img.product__arrow-left(src="../../asset/arrow-left.jpg", alt="")
+      img.product__arrow-right(src="../../asset/arrow-right.jpg", alt="")
+    .product__slider
+      .product__slider-item 
+        img(src='../../asset/one.jpg', alt="")
+        h6 OHUI
+        p Mỹ phẩm châu Âu
+        span.product__slider-border
+        span.product__slider-price.red 355.00
+          span đ
+        +buyCart
+      .product__slider-item 
+        img(src='../../asset/two.jpg', alt="")
+        mixin slider
+          h6 OHUI
+          p Mỹ phẩm châu Âu
+          span.product__slider-border
+          span.product__slider-price 355.00
+            span đ
+        +slider
+        +buyCart
+      .product__slider-item 
+        img(src='../../asset/three.jpg', alt="")
+        +slider450
+        +buyCart
+      .product__slider-item.hidden
+        img(src='../../asset/1-sl-780.jpg', alt="")
+        +slider
+        +buyCart
+      .product__slider-item.hidden.hidden-show
+        img(src='../../asset/2-sli-780.jpg', alt="")
+        +slider450
+        +buyCart
+      .product__slider-item 
+        img(src='../../asset/four.jpg', alt="")
+        +slider
+        +buyCart
+      .product__slider-item 
+        img(src='../../asset/five.jpg', alt="")
+        +slider
+        +buyCart
+      .product__slider-item 
+        img(src='../../asset/six.jpg', alt="")
+        h6 OHUI
+        p Mỹ phẩm châu Âu
+        span.product__slider-border
+        span.product__slider-price.red 355.00
+          span đ
+        +buyCart
+  section.description
+    .description__icon
+      ul
+        a.description__icon-link(href='')
+          i.fab.fa-facebook-f
+          span FACEBOOK
+        span.description__icon-col
+        a.description__icon-link(href='')
+          i.fab.fa-twitter
+          span TWITTER
+        span.description__icon-col.hidden
+        a.description__icon-link.hidden(href='')
+          i.fab.fa-instagram
+          span INSTAGRAM
+        span.description__icon-col.hide
+        a.description__icon-link.hide(href='')
+          i.fab.fa-google-plus-g
+          span GOOGLE+
+        span.description__icon-col.hid
+        a.description__icon-link.hid(href='')
+          i.fab.fa-pinterest-p
+          span PINTEREST
+        span.description__icon-col.hid
+        a.description__icon-link.hid(href='')
+          i.fab.fa-linkedin-in
+          span LINKEDIN
+  section.blog
+    .blog__about
+      .blog__about-us
+        h3 Về chúng tôi
+        +blogSlack
+        .blog__about-logo
+          a(href='#') M
+          span adala
+        span.blog__about-review Giới thiệu chung về mỹ phẩm handmade Mandala 
+        p.blog__about-desc
+          | Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng
+          | cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt. Hi, chào
+          | các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè
+          | nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.sau khá nhiều lời hứa hão thì hôm nay tớ quay
+          | lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải
+          | nhiệt.
+        span.blog__about-more(href='#') Xem thêm
+      .blog__about-blog
+        h3 blog
+        +blogSlack
+        img(src='../../asset/blog.jpg', alt='')
+        span.blog__about-review Review son kem Bourjois Velvet
+        p.blog__about-desc
+          | Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng
+          | cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.
+        span.blog__about-name Bởi NamTran ( 27 / 05 / 2015 )
+        .blog__about-script
+          a(href='#')
+            | Đọc thêm
+            i.fas.fa-angle-right
+          a(href='#') 23 Bình luận
+      .blog__about-email
+        .blog__about-one
+          h3 Gửi Email cho chúng tôi
+          +blogSlack
+          input(type='text', name='', id='', placeholder='Email của bạn')
+          p Gửi email để nhận những ưu đãi mới nhất
+          button Gửi
+        .blog__about-two
+          h3 Tag Sản phẩm
+          +blogSlack
+          .blog__about-tag
+            span.blog__about-first Đồng hồ
+            -let listDH = ["Túi", "Phụ kiện", "Đồng hồ"]
+            each item in listDH 
+              span=item
+            span.blog__about-last Túi
+          .blog__about-tag
+            -let listTui = ["Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Giày", "Sandal"]
+            each items in listTui
+              span=items
+          .blog__about-tag
+            -let listEnd = ["Trẻ em","Thời trang nữ", "Trẻ em", "Thời trang nữ"]
+            each itemm in listEnd 
+              span=itemm

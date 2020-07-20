@@ -1,0 +1,100 @@
+mixin buyCart
+  .product__buyCart
+    button MUA HÀNG
+    span <i class="fas fa-heart"></i>
+    span <i class="fas fa-sync-alt"></i>
+mixin slider450
+  h6 OHUI
+  p Mỹ phẩm châu Âu
+  span.product__slider-border
+  span.product__slider-price 355.00
+    span đ
+  span.product__slider-price.gray 405.00
+    span đ
+mixin imgSlack   
+  .image__grid-space
+    span
+    span 
+      each n in Array(9)
+        | /
+    span
+mixin blogSlack
+  .blog__about-space
+    span
+    span 
+      each n in Array(17)
+        | /
+    span
+mixin list(pay, total, inDebt)
+  tr
+    td 
+      p.cart__table-order #1006
+    td
+      p.cart__table-name May 13, 2013
+    td 
+      p.cart__table-quantity= pay
+    td 
+      span.cart__table-price=total
+        span đ
+    td 
+      span.cart__table-price=inDebt
+        if(inDebt !== 0)
+          span đ
+mixin icon
+  .blog__icon
+    .blog__icon-left
+      i.fas.fa-th-large
+      i.fas.fa-list
+    .blog__icon-right
+      i.fas.fa-caret-left
+      span.blog__icon-number
+        span 1 
+        span 2 3
+      i.fas.fa-caret-right
+mixin listInput(name, type)
+  .blogDetail__banner-input
+    p= name
+    input(type=type)
+mixin listInputContact(name, type)
+  .contact__content-all
+    p= name
+    input(type=type)
+mixin ringImgTop(img)
+  .ring__title-content
+    .ring__title-text
+      h5 THE MARK OF A LEGEND
+      span
+      p Tự hào được ghi là năm mà Tiffany & Co là
+        |thành lập, bộ sưu tập mang tính biểu tượng này cung cấp cho một cái gật đầu với
+        |qua trong khi thể hiện một cảm giác hiện đại với kiểu dáng đẹp
+        |đường cong và đường nét mượt mà.
+    img(src=img, alt="")
+mixin ringImgBot(img1)
+  .ring__title-content
+    img(src=img1, alt="") 
+    .ring__title-text
+      h5 THE MARK OF A LEGEND
+      span
+      p Tự hào được ghi là năm mà Tiffany & Co là
+        |thành lập, bộ sưu tập mang tính biểu tượng này cung cấp cho một cái gật đầu với
+        |qua trong khi thể hiện một cảm giác hiện đại với kiểu dáng đẹp
+        |đường cong và đường nét mượt mà.
+mixin form(title, type)
+  p=title
+  input(type=type)
+mixin listShopping(price, quantity)
+  tr.cart__table-item
+    td 
+      img(src="../../../asset/shopping-cart.jpg", alt="")
+    td
+      p.cart__table-name Lắc tay D & G
+    td 
+      span.cart__table-price 345.000
+        span đ
+    td 
+      button.cart__table-quantity= quantity
+    td 
+      span.cart__table-price=price
+        span đ
+    td
+      i.far.fa-trash-alt

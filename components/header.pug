@@ -1,0 +1,59 @@
+header
+  nav
+    .nav__left
+      a(href='#') M
+      span adala
+    .nav__center
+      a(href='#') TRANG CHỦ
+      a(href='#') GIỚI THIỆU
+      a(href='#')
+        | SẢN PHẨM
+        i.fa.fa-angle-down
+        .nav__center-dropdown
+          .nav__center-one.nav__center-check
+            h3 Dưỡng da
+            ul
+              -let listOne = ["Áo khoác","Bộ áo ền quần","Dresses","Quần '/' Váy","Quần short","Quần jean","Đồ đan","Áo nỉ"]
+              each item in listOne
+                li= item
+          .nav__center-two.nav__center-check
+            h3 Nước hoa
+            ul
+              -let listTwo =["Áo cánh / Áo sơ mi","Túi xách & Balô","Khăn quàng cổ và Foulards","Dệt kim Hats & Gloves","Vớ & Socks","Jewerly","Bị bảo vệ","Giày"]
+              each item in listTwo
+                li= item
+          .nav__center-two.nav__center-check
+            h3 Trang sức
+            ul
+              each item in listTwo
+                li= item
+      a(href='#') TIN TỨC
+      a(href='#') BẢN ĐỒ
+      a(href='#') LIÊN HỆ
+    .nav__right
+      i.fas.fa-shopping-cart
+        i.nav__right-number 0
+        .nav__right-all
+          //- - for(var x = 0; x < 2; x++)
+          //-   .nav__right-detail
+          //-     img(src="../../../asset/boy.jpg", alt="")
+          //-     div
+          //-       p Áo sơ mi Nam
+          //-       p 120.000
+          //-         span đ
+          //-     <i class="fas fa-times"></i>
+          //- .nav__right-total
+          //-   span Tổng số
+          //-   span 240.000
+          //-     span đ
+          .nav__right-cart
+            a(href="http://127.0.0.1:5501/Compiled-HTML/pages/shopping-cart/shopping-cart.html target="_blank") GIỎ HÀNG
+      i.fas.fa-search
+      i.fas.fa-bars
+  .bannerText
+    .bannerText-desc
+      h5 GreenVera
+      p Sản phẩm tinh dầu dưỡng da mới nhất của Mandala 
+      h6 Giá chỉ  750.000
+        span đ
+      a Mua hàng

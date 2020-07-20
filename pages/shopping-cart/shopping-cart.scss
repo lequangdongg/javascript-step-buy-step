@@ -1,0 +1,344 @@
+@import "../../components/headerNot";
+@import "../../common/resetHeader";
+@import "../../common/variable";
+@import "../../common/font";
+@import "../../common/minxin";
+
+.breadcrumb {
+  border-bottom: 1px dashed #e7e7e7;
+}
+
+.cart__table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    th {
+      @include fontAndWeight($fontLato);
+      text-transform: uppercase;
+      @include fontSizeAndColor(16px, #212121);
+      background-color: #f9f9f9;
+      border: 1px solid #e7e7e7;
+      padding: 12px;
+    }
+    td {
+      border: 1px solid #e7e7e7;
+      text-align: center;
+      padding: 30px;
+      .cart__table-name {
+        @include fontAndWeight($fontOpen);
+        @include fontSizeAndColor(13px, #212121);
+        white-space: nowrap;
+      }
+      .cart__table-price {
+        @include fontAndWeight($fontLobter);
+        @include fontSizeAndColor(13px, #212121);
+        position: relative;
+        span {
+          position: absolute;
+          top: -3px;
+          left: 48px;
+          font-size: 10px;
+          font-weight: bold;
+        }
+      }
+      .cart__table-quantity {
+        padding: 7px 12px;
+        background: transparent;
+        border: 1px solid #e1e1e1;
+        @include fontAndWeight($fontRoboto);
+      }
+      i {
+        font-size: 25px;
+      }
+    }
+  }
+}
+.firstNext {
+  float: right;
+  display: block;
+  padding: 20px 70px;
+  margin-top: 20px;
+  border: none;
+  background: #789629;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 83%;
+  margin: 20px auto;
+}
+
+::selection {
+  color: #fff;
+  background: #789629;
+}
+
+.container {
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+
+  header {
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+  }
+
+  .form-outer {
+    width: 100%;
+    overflow: hidden;
+
+    form {
+      display: flex;
+      width: 400%;
+    }
+  }
+}
+
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+
+  .title {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .field {
+    width: 50%;
+    height: 45px;
+    margin: 45px 0;
+    display: flex;
+    position: relative;
+    // justify-content: space-between;
+  }
+}
+
+form .page {
+  .field {
+    .label {
+      position: absolute;
+      top: -30px;
+      font-weight: 500;
+    }
+
+    input {
+      height: 100%;
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      padding-left: 15px;
+      font-size: 18px;
+    }
+
+    select {
+      width: 100%;
+      padding-left: 10px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    button {
+      // display: block;
+      padding: 20px 70px;
+      margin-top: 20px;
+      border: none;
+      background: #789629;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.5s ease;
+
+      &:hover {
+        background: #000;
+      }
+    }
+  }
+
+  .btns button {
+    margin-top: -20px !important;
+
+    &.prev {
+      margin-right: 3px;
+      font-size: 17px;
+    }
+
+    &.next {
+      margin-left: 3px;
+    }
+  }
+}
+
+.container .progress-bar {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+
+  .step {
+    text-align: center;
+    width: 100%;
+    position: relative;
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.progress-bar .step {
+  .bullet {
+    height: 25px;
+    width: 25px;
+    border: 2px solid #000;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+
+    &.active {
+      border-color: #789629;
+      background: #789629;
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.active {
+      span {
+        display: none;
+      }
+
+      &:after {
+        background: #789629;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: animate 0.3s linear forwards;
+      }
+    }
+  }
+
+  &:last-child .bullet {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  p.active {
+    color: #789629;
+    transition: 0.2s linear;
+  }
+
+  .check {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    &.active {
+      display: block;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.radio {
+  margin: 0.5rem;
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: "";
+        background: #f4f4f4;
+        border-radius: 100%;
+        border: 1px solid darken(#f4f4f4, 25%);
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative;
+        top: -0.2em;
+        margin-right: 1em;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .radio-label {
+        &:before {
+          background-color: $colorGreen;
+          box-shadow: inset 0 0 0 4px #f4f4f4;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: $colorGreen;
+        }
+      }
+    }
+    &:disabled {
+      + .radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 4px #f4f4f4;
+          border-color: darken(#f4f4f4, 25%);
+          background: darken(#f4f4f4, 25%);
+        }
+      }
+    }
+    + .radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.totalMoney {
+  padding: 20px 0;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+}

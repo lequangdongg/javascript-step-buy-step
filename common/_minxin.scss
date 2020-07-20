@@ -1,0 +1,166 @@
+@mixin shapeLeft($color, $bdTop, $bdRight, $bdBottom, $left) {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: $bdTop solid transparent;
+  border-right: $bdRight solid $color;
+  border-bottom: $bdBottom solid transparent;
+  position: absolute;
+  top: 50%;
+  left: $left;
+  transform: translate(0, -50%);
+}
+
+@mixin shapeRigh($color, $bdTop, $bdLeft, $bdBottom, $right) {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: $bdTop solid transparent;
+  border-left: $bdLeft solid $color;
+  border-bottom: $bdBottom solid transparent;
+  position: absolute;
+  top: 50%;
+  right: $right;
+  transform: translate(0, -50%);
+}
+
+@mixin fontSizeAndColor($font, $color) {
+  color: $color;
+  font-size: $font;
+}
+
+@mixin fontAndWeight($font) {
+  font-family: $font;
+  font-weight: $fontWeigth400;
+}
+
+@mixin twoFont {
+  @include fontSizeAndColor(12px, #4b4b4b);
+  @include fontAndWeight($fontOpen);
+}
+
+@mixin flexTop1R {
+  margin-top: 1rem;
+  display: flex;
+}
+
+@mixin fontSize18AndMG {
+  margin-right: 1em;
+  font-size: 18px;
+}
+
+@mixin centerBroser($topBottom) {
+  width: 83%;
+  margin: $topBottom auto;
+  z-index: -1;
+}
+
+@mixin flexList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin titleContent {
+  font-size: 18px;
+  color: #212121;
+  font-family: $fontOpen;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: $borderC1;
+  padding-bottom: 12px;
+}
+
+@mixin buttonBlack {
+  @include fontSizeAndColor(12px, #ffffff);
+  @include fontAndWeight($fontOpen);
+  background-color: #000;
+  border: 0;
+  padding: 8px 14px;
+  height: 50%;
+}
+
+@mixin bangles {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #000000;
+  font-family: "Myriad Pro";
+  text-transform: uppercase;
+}
+
+@mixin inputBangles {
+  display: block;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #cacaca;
+  margin-top: 14px;
+  color: #b4b4b4;
+  &::after {
+    content: "\00a2";
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
+}
+
+@mixin ringSpan {
+  color: #818181;
+  margin-left: 30px;
+}
+
+@mixin ringSp($size) {
+  font-size: $size;
+  line-height: 24px;
+  color: #131313;
+  font-family: "Open Sans";
+  font-weight: 700;
+}
+
+@mixin popUp($left, $top) {
+  left: $left;
+  top: $top;
+  position: absolute;
+  transform: translate(-50%, 0%);
+}
+
+@mixin rootLI($color, $deg) {
+  transform: rotate($deg);
+  color: $color;
+  transition: .3s;
+}
+@mixin resFontSize($width ,$font) {
+  @media screen and (max-width: $width) {
+    font-size: $font;
+  }
+}
+
+@mixin resWidthP($width, $line, $font) {
+  width: $width;
+  line-height: $line;
+  font-size: $font;
+}
+
+@mixin resBottom($width ,$bottom) {
+  @media screen and (max-width: $width) {
+    bottom: $bottom;
+  }
+}
+
+@mixin space($width ,$color) {
+  width: $width;
+  height: 1px;
+  background-color: $color;
+}
+
+@mixin columnAndRow($colStart, $colEnd, $rowStart, $rowEnd) {
+  grid-column-start: $colStart;
+  grid-column-end: $colEnd;
+  grid-row-start: $rowStart;
+  grid-row-end: $rowEnd;
+}
+
+@mixin BGImageAndHeight($image, $height) {
+  background-image: url($image);
+  height: $height;
+}

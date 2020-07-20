@@ -1,0 +1,98 @@
+include ../../common/mixin.pug
+section.breadcrumb
+  span Home <i class="fas fa-angle-right"></i>
+  span Sản phẩm <i class="fas fa-angle-right"></i>
+  span Trang sức
+section.cart
+  //- h3 GIỎ HÀNG
+  //- table.cart__table
+  //-   tr
+  //-     - let listTable = ["Ảnh", "Tên sản phẩm", "Giá", "Số Lượng", "Tổng số", "Xóa"]
+  //-     each list in listTable 
+  //-       th= list
+  .container
+    .progress-bar
+      .step
+        p
+          | Thông tin dỏ hàng
+        .bullet
+          span 1
+        .check.fas.fa-check(aria-hidden='true')
+      .step
+        p
+          | Thông tin thanh toán
+        .bullet
+          span 2
+        .check.fas.fa-check(aria-hidden='true')
+      .step
+        p
+          | Xác thực đơn hàng
+        .bullet
+          span 3
+        .check.fas.fa-check(aria-hidden='true')
+      .step
+        p
+          | Submit
+        .bullet
+          span 4
+        .check.fas.fa-check(aria-hidden='true')
+    .form-outer
+      form(action='#', name='form')
+        .page.slide-page
+          .title
+            | Giỏ hàng : 
+          table.cart__table
+            tr
+              - let listTable = ["Ảnh", "Tên sản phẩm", "Giá", "Số Lượng", "Tổng số", "Xóa"]
+              each list in listTable 
+                th= list
+            button.firstNext.next Next
+        .page
+          .title
+            | Thông tin thanh toán :
+          .field
+            .label
+              | Địa chỉ email
+            input(type='email',name='email')
+          .field
+            .label
+              | Số điện thoại
+            input(type='number', name='phone')
+          .field
+            .label 
+              | Hình thức thanh toán
+            .radio
+              input#radio-1(name='radio', type='radio')
+              label.radio-label(for='radio-1') Thanh toán trực tiếp khi nhận hàng
+            .radio
+              input#radio-2(name='radio', type='radio')
+              label.radio-label(for='radio-2') Thanh toán trực tuyến
+
+          .field.btns
+            button.prev-1.prev Previous
+            button.next-1.next Next
+        .page
+          .title
+            | Xác thực đơn hàng :
+          table.cart__table
+            tr
+              each list in listTable 
+                th= list
+          .totalMoney 
+          .field.btns
+            button.prev-2.prev Previous
+            button.next-2.next Next
+        .page
+          .title
+            | Đăng nhập xác thực:
+          .field
+            .label
+              | Tên đăng nhập
+            input(type='text', name='username')
+          .field
+            .label
+              | Mật khẩu
+            input(type='password', name='password')
+          .field.btns
+            button.prev-3.prev Previous
+            button.submit Submit
